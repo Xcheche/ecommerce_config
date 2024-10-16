@@ -1,7 +1,10 @@
-from django.db import models
 from decimal import Decimal
 
+from django.db import models
 
+
+# The `Category` class defines a model with fields for name and slug, along with Meta options for
+# ordering and verbose name.
 class Category(models.Model):
     name = models.CharField(
         max_length=250,
@@ -21,11 +24,13 @@ class Category(models.Model):
 
 
 # Product Model
+# The `Product` class defines a model with fields for category, title, slug, image, description,
+# price, discount, and availability.
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique=True)
-    image = models.ImageField(upload_to="product_images/%Y/%m/%d/", blank=True)
+    image = models.ImageField(upload_to="images/%Y/%m/%d/",default="default.png", blank=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=4, decimal_places=2)
 
