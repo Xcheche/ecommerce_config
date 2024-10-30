@@ -1,5 +1,6 @@
 
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -112,9 +113,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-MEDIA_URL =  '/media/'
-MEDIA_ROOT=  BASE_DIR / "static/media"
-
+# Media files settings
+MEDIA_URL = '/media/'  # URL to access media files in development
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Path to store uploaded files
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

@@ -27,7 +27,7 @@ class Category(models.Model):
 # The `Product` class defines a model with fields for category, title, slug, image, description,
 # price, discount, and availability.
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,null=True)
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique=True)
     image = models.ImageField(upload_to="images/%Y/%m/%d/",default="default.png", blank=True)

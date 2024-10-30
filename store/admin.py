@@ -25,6 +25,7 @@ class ProductAdmin(admin.ModelAdmin):
         'price',
         'discount',
         'available',
+        "slug",
     )
     list_filter = (
         'category',
@@ -38,6 +39,7 @@ class ProductAdmin(admin.ModelAdmin):
         'discount',
     )
     search_fields = ('slug',)
+    prepopulated_fields = {'slug': ['title']}
 
 
 def _register(model, admin_class):
