@@ -44,6 +44,7 @@ class Product(models.Model):
         ordering = ("title",)
         verbose_name_plural = "products"
         
+        
 
     def __str__(self):
         return self.title
