@@ -1,6 +1,7 @@
 from decimal import Decimal
 
 from django.db import models
+from django.urls import reverse
 
 
 # The `Category` class defines a model with fields for name and slug, along with Meta options for
@@ -21,6 +22,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    
+    # def get_absolute_url(self):
+    #     return reverse("category", args=[self.slug])
 
 
 # Product Model
@@ -48,3 +52,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse("product_info", args=[self.slug])
