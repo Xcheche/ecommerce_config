@@ -22,7 +22,10 @@ from django.urls import include, path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    # store app
     path("", include("store.urls")),
+    # cart app
+    path("cart/",include("cart.urls")),
 ] # Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
