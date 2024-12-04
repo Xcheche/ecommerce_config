@@ -56,7 +56,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "store.views.category",  # Add this line to the context_processors list
+                "store.views.category",  # Add this line to the context_processors list for category 
+                "cart.context_processors.cart" # Session config
             ],
         },
     },
